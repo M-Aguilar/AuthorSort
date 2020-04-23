@@ -2,9 +2,11 @@ This simple program takes a .txt file containing a list of full author names.
 It removes punctuation and produces a consistent naming convention.
 
 For example:
-John H. Smith 		--> 	Smith, J. H.
-Yukon Gold 		--> 	Gold, Y.
-Martin Van Buren 	--> 	Van Buren, M.
+John H. Smith		-->		Smith, J. H.
+
+Yukon Gold			-->		Gold, Y.
+
+Martin Van Buren	-->		Van Buren, M.
 
 The user is prompted to provide the number of initial key authors that ignore the alphabetical surname order.
 
