@@ -68,7 +68,7 @@ def clean(filename):
 			elif len(i) > 2:
 				new_list.append(i.translate(str.maketrans('', '', string.punctuation)))
 		return new_list
-main():
+def main():
 	p = p_format(clean(input('Please enter the input file name.')), authors())
 	new_f = input("what would you like the output file to be called?: ")
 	with open(new_f, 'w', encoding="utf-8") as f_o:
