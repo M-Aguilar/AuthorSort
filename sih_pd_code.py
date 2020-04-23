@@ -59,7 +59,7 @@ def p_format(n_list, ka):
 
 def clean(filename):
 	new_list = []
-	with open(filename) as f:
+	with open(filename, encoding="utf-8") as f:
 		names = [x.strip() for x in str(f.readlines()).split(',')]
 		for i in names:
 			i = ''.join([j for j in i if not j.isdigit()])
@@ -68,13 +68,14 @@ def clean(filename):
 			elif len(i) > 2:
 				new_list.append(i.translate(str.maketrans('', '', string.punctuation)))
 		return new_list
+main():
+	p = p_format(clean(input('Please enter the input file name.')), authors())
+	new_f = input("what would you like the output file to be called?: ")
+	with open(new_f, 'w', encoding="utf-8") as f_o:
+		for i in p:
+			if p.index(i) == len(p) - 1:
+				f_o.write('and ' + i)
+			else:
+				f_o.write(i + ', ')
 
-p = p_format(clean(input('please enter name existing name file and appropriate directory if not in the same directory as this program: ')), authors())
-new_f = input("what would you like the name to be called?: ")
-with open(new_f, 'w') as f_o:
-	for i in p:
-		if p.index(i) == len(p) - 1:
-			f_o.write('and ' + i)
-		else:
-			f_o.write(i + ', ')
-
+if __name__
